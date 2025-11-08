@@ -15,7 +15,7 @@ housing=st.selectbox("Housing",["own","free","rent"])
 saving_accounts=st.selectbox("Saving accounts",["little","moderate","quite rich","rich"])
 checking_accounts=st.selectbox("Checking account",["little","moderate","rich","none"])
 credit_amount=st.number_input("Credit Amount", min_value=0,  value=1000)
-duration=st.number_input("Duration", min_value=1,value=12)   
+# duration=st.number_input("Duration", min_value=1,value=12)   
 
 input_df=pd.DataFrame({
     "Age":[age],
@@ -24,12 +24,12 @@ input_df=pd.DataFrame({
     "Housing":[encoders["Housing"].transform([housing])[0]],
     "Saving accounts":[encoders["Saving accounts"].transform([saving_accounts])[0]],
     "Checking account":[encoders["Checking account"].transform([checking_accounts])[0]],
-    "Credit amount":[credit_amount],
-    "Duration":[duration]
+    "Credit amount":[credit_amount]
+    # "Duration":[duration]
 })
 
 if st.button("Predict Credit Risk"):
     prediction=model.predict(input_df)
-    risk= "High Risk" if prediction[0]==1 else "Low Risk"
+    risk= "bad" if prediction[0]==1 else "good"
     st.write(f"The predicted credit risk is: **{risk}**")
     
