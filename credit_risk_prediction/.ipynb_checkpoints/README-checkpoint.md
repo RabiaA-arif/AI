@@ -63,7 +63,33 @@ Used Grid Search Cross Validation (CV=5) to identify optimal parameters for each
 Accuracy Score
 
 # Results 
-Model               :  Accuracy
+Model          :  Accuracy
+Decision Tree      68.5%
+Randome Forest     63.3%
+XGboost            59.3%
+ExtraTree          58.6%
 
 
+#final model selected is ExtraTreeClassifier 
+
+# Model Persistence
+saving model 
+
+joblib.dump(best_et,"extra_trees_credit_model.pkl")
+
+# Deployment
+Platform -> Streamlit Web Application (app.py)
+
+#How It Works
+Loads:
+extra_trees_credit_model.pkl
+All encoder .pkl files
+Collects user input via form fields.
+Transforms categorical values using encoders.
+Passes processed input to the trained model.
+Displays output:
+
+"The predicted credit risk is GOOD"
+
+"The predicted credit risk is BAD"
 
