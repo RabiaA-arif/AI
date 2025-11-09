@@ -7,8 +7,11 @@
 
 
   # Project overview 
-   in this project i used german credit risk dataset and developed a prediction     model that can predict whether borrower is repay or not based on their financial and some features the solution include data cleaning ,feature encoding,model  
-training,evalutation,deployment via streamlit 
+   in this project i used german credit risk dataset and developed a prediction     model that can predict whether borrower is repay or not based on their       
+   financial and some features 
+
+    the solution include data cleaning ,feature encoding,model  
+    training,evalutation,deployment via streamlit 
 
 # Key Technologies
 
@@ -60,9 +63,7 @@ Used Grid Search Cross Validation (CV=5) to identify optimal parameters for each
 Accuracy Score
 
 # Results 
+Model               :  Accuracy
 
 
-<<<<<<< HEAD
-=======
-         
->>>>>>> 9fa2251938842f1f21b0c80f5500ff6202dd16e9
+
