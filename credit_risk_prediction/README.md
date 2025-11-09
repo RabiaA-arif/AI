@@ -7,11 +7,8 @@
 
 
   # Project overview 
-   in this project i used german credit risk dataset and developed a prediction     model that can predict whether borrower is repay or not based on their       
-   financial and some features 
-
-    the solution include data cleaning ,feature encoding,model  
-    training,evalutation,deployment via streamlit 
+   in this project i used german credit risk dataset and developed a prediction     model that can predict whether borrower is repay or not based on their financial and some features the solution include data cleaning ,feature encoding,model  
+training,evalutation,deployment via streamlit 
 
 # Key Technologies
 
