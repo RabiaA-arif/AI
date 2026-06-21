@@ -20,3 +20,8 @@ def add():
 def subtraction():
     return {"Subtraction:" : 56 - 8 }
 
+
+@my_application.get("/mul")
+
+def multiplication():
+    return {"Multiplication:": 5 * 5 }
