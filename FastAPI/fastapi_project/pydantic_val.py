@@ -31,3 +31,8 @@ def predict_loan(application:LoanApplication):
         "decision" : "approve" if approved else "rejected",
         "reviewe income": application.income
     }
+    
+    # using pydantic we validation data type with business logic
+    
+    # Assignment :Health insuurance prediction application
+    # using pydantic model
