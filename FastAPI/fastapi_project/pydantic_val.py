@@ -2,9 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 
-
+##########error #############
+# ImportError: cannot import name 'BaseModel' from partially initialized module 'pydantic'
+# (most likely due to a circular import)
+# reason : The error occurs because you have named your local file pydantic.py
     
-app=FastAPI()
+apps=FastAPI()
 
 class LoanApplication(BaseModel):
     name: str
@@ -13,7 +16,7 @@ class LoanApplication(BaseModel):
     loan_amount: float
     employeement_years: int
     
-@app.post('/predict')
+@apps.post('/predict')
 
 def predict_loan(application:LoanApplication):
     # model login
