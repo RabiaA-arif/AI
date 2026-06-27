@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from fastapi import HTTPException
 app=FastAPI()
 
 students = {
@@ -17,6 +17,11 @@ def get_student_id(student_id:str):
         raise HTTPException(
         status_code = 404,
         detail=f"Student With id {student_id} is not found"
+        )
+    if student_id <= 0:
+        raise HTTPException(
+            status_code = 404,
+            detail=f"This number is not valid id"
         )
     return students[student_id]
 
