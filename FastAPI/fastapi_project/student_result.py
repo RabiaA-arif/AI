@@ -9,6 +9,8 @@ class MarksSubmission(BaseModel):
     student_id: str
     marks:  int
     subject: str
+    
+    
 students = {
     "01":{"name":"A","marks":87,"grade":"A"},
     "02":{"name":"B","marks":88,"grade":"A"},
@@ -39,7 +41,7 @@ def get_student_id(student_id:str):
 #     detail = "Not Found"
 # )
 
-@app.post("/marks-submit")
+@app.post("/mark_submit")
 def submit_marks(submission:MarksSubmission):
     if submission.marks < 0 or submission.marks > 100:
         raise HTTPException(
@@ -47,7 +49,7 @@ def submit_marks(submission:MarksSubmission):
             detail={
                 "error":"marks is between 0 and 100",
                 "marks received": submission.marks,
-                "fix":"entera marks between 0 and 100"
+                "fix":"enter marks between 0 and 100"
             }
             
         )
@@ -58,12 +60,13 @@ def submit_marks(submission:MarksSubmission):
         raise HTTPException(
             status_code=400,
             detail={
-                "subject_name":"input the valid subject name",
+                "subject_name":"Empty subjec name",
                 
             }
         )
         
     students[submission.student_id]["marks"] = submission.marks
+    
     return{
         "message":"student marks is submitted succesfully",
         "student":students[submission.student_id]["name"],
