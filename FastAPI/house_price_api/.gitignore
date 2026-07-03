@@ -1,3 +1,4 @@
 *.joblib
 house_price_api\house_features.joblib
 house_price_api\house_model.joblib
+Interview_set.xlsx
