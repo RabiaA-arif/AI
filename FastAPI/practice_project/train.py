@@ -40,3 +40,19 @@ model = ExtraTreesRegressor(
 
 model.fit(X_train,y_train)
 
+
+# pridicting the accuracy
+
+y_prediction = model.predict(X_test)
+
+mae = mean_absolute_error(y_true=y_test,
+                          y_pred=y_prediction)
+print(f"Value of mean absolute error:{mae}")
+
+r2 = r2_score(y_true=y_test,y_pred=y_prediction,force_finite=True)
+print(f"Value of r2 score:{r2}")
+
+# saving the trained model
+
+joblib.dump(model,filename="breast_cancer.joblib")
+joblib.dump(list(X.columns),filename="breast_cancer_feature.joblib")
