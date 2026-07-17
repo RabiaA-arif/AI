@@ -13,3 +13,5 @@ print(f"Shape of data:{df.shape}")
 print("Property of data set")
 
 print(f"Describe:{df.describe()}")
+
+print(f"Features in data:{data.feature_names}")
