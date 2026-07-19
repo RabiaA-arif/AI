@@ -56,3 +56,7 @@ class Setting(BaseSettings):
 @lru_cache
 def get_setting() -> Setting:
     return Setting
+
+    """@lru-cache:The @lru_cache decorator ensures settings are loaded once and reused 
+    — no repeated file reads or environment lookups on every request.
+    """
