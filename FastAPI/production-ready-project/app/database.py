@@ -57,3 +57,4 @@ async def get_db_session():
     """FASTAPI dependency for database session"""
     async with sessionmanager.session() as session:
         yield session
+        
