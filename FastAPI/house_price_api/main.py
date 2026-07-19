@@ -13,8 +13,7 @@ features = joblib.load("house_features.joblib")
 # input schema
 
 class HouseFeatures(BaseModel):
-    MedInc : float = Field(gt =0,description="Model Income of"\
-        "Neighbouredhood")
+    MedInc : float = Field(gt =0,description="Model Income of"/"Neighbouredhood")
     HouseAge :float = Field(gt=0,description="Average age of house")
     AveRooms : float = Field(gt=0,description="Average number of rooms")
     AveBedrms : float = Field(gt=0,description="Average number of rooms")
